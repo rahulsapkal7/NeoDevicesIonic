@@ -1,0 +1,31 @@
+
+<ion-header>
+    
+      <ion-navbar >
+          
+            <button ion-button menuToggle  icon-only>
+                <ion-icon name='menu'></ion-icon>
+              </button>
+        <ion-title>{{ this.platformType}}</ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content padding>
+      <ul>
+        <li *ngFor="let item of deviceList.data; let index = index" class="clearfix"  >
+          <div class="img-container">
+            <img src="{{ this.ImgURL +item.images[0].ImgURL }}">
+          </div>
+          <div>
+            <h2>{{ item.Model_No }}</h2>
+            <p class="description">{{ item.OS_Version }}</p> 
+            <button *ngIf=" item.isAvailable == 'true'"  class= "buttonColor" ion-button (click)="IssueDevice(item)" >View Details</button>
+            <button *ngIf=" item.isAvailable == 'false'"  class= "redButtonColor" ion-button >Already Issued</button>
+          </div>
+        </li>
+      </ul>
+    </ion-content>
+    
+    

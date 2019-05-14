@@ -1,0 +1,7 @@
+{
+  "name": "NeoDeviceManagement",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

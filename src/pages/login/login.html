@@ -1,0 +1,112 @@
+<!-- <ion-header>
+  <ion-navbar>
+
+      <ion-title  >Login</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content padding class= "bckColor">
+	<!-- <div class="logo">
+        <h1 class="logotext">NeoSTORE</h1>
+        </div> -->
+  <ion-list no-lines>
+
+        <div class="logo">
+                <h1 text-center class="logotext">Device Management</h1>
+                </div>
+      <form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">
+
+        
+          <ion-item class="ion-itemColor">
+              <ion-label class="lableFloat" floating>Email</ion-label>
+              <ion-input class="lableFloat" formControlName="email" type="text"></ion-input>
+          </ion-item>
+          <ion-item class="ion-itemColor"
+              no-lines
+              *ngIf="( user.get('email').hasError('pattern') || user.get('email').hasError('required') ) && user.get('email').touched">
+
+              <div
+                  class="error"
+                  *ngIf="user.get('email').hasError('required') && user.get('email').touched">
+                  Email is required
+              </div>
+              <div
+                  class="error"
+                  *ngIf="user.get('email').hasError('pattern') && user.get('email').touched">
+                 Please enter office email Id.
+              </div>
+          </ion-item>
+          <ion-item class="ion-itemColor">
+                <ion-label class="lableFloat" floating >password</ion-label>
+                <ion-input class="lableFloat" formControlName="password" type="password"></ion-input>
+            </ion-item>
+            <ion-item class="ion-itemColor"
+                no-lines
+                *ngIf="( user.get('password').hasError('required') || user.get('password').hasError('minlength') ) && user.get('password').touched">
+  
+                <div
+                    class="error"
+                    *ngIf="user.get('password').hasError('required') && user.get('password').touched">
+                    password is required
+                </div>
+                <div
+                    class="error"
+                    *ngIf="user.get('password').hasError('minlength') && user.get('password').touched">
+                    Please enter minimum 7 letter for password
+                </div>
+            </ion-item>
+          
+            <ion-item class="ion-itemColor paddingTop" >
+                    <ion-label class="lableFloat" floating >City</ion-label>
+                    <ion-select class="lableFloat" (ionChange)="onChangeCity(user)" formControlName="city"  >
+                            <ion-option value="Mumbai">Mumbai</ion-option>
+                            <ion-option value="NaviMumbai">Navi Mumbai</ion-option>
+                            <ion-option value="Pune">Pune</ion-option>
+                          </ion-select>
+                </ion-item>
+                <ion-item class="ion-itemColor"
+                    no-lines
+                    *ngIf=" user.get('city').hasError('required')  && user.get('city').touched">
+    
+                    <div
+                        class="error"
+                        *ngIf=" user.get('city').touched">
+                        Please select city first
+                    </div>
+                </ion-item>
+
+            <ion-item class="ion-itemColor paddingTop" *ngIf="status" >
+                    <ion-label class="lableFloat" floating >Branch</ion-label>
+                          <ion-select  class="lableFloat" formControlName="branch" >
+                                <ion-option *ngFor="let category of categories;" 
+                                        [value]="category">{{category.title}}</ion-option>      
+                          </ion-select>
+                </ion-item>
+                <ion-item class="ion-itemColor"
+                    no-lines
+                    *ngIf=" user.get('branch').hasError('required')  && user.get('branch').touched">
+    
+                    <div
+                        class="error"
+                        *ngIf=" user.get('branch').touched">
+                        Please select branch first
+                    </div>
+                </ion-item>
+
+
+          <button class= "buttonColor" ion-button full margin-top [disabled]="user.invalid">Login</button>
+
+          
+          
+
+      </form>
+
+      <button class= "buttonColor" ion-button full margin-top (click)="register()">Register</button>
+  </ion-list>
+</ion-content>
+  <style type="text/css">
+      .error {
+          color: red;
+      }
+  </style>
+  

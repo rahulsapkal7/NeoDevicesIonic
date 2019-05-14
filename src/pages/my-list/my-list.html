@@ -1,0 +1,41 @@
+<!--
+  Generated template for the MyListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>myList</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ul *ngIf="deviceList != null" >
+    <li *ngFor="let item of deviceList.data; let index = index" class="clearfix"  >
+      <div class="img-container">
+        <img src="{{ this.ImgURL +item.images[0].ImgURL }}">
+      </div>
+      <div>
+        <h2>{{ item.Model_No }}</h2>
+        <p class="description">{{ item.OS_Version }}</p> 
+        <button   class= "buttonColor" ion-button (click)="ReturnDevice(item)" >Return Device</button>
+      </div>
+    </li>
+  </ul>
+
+ 
+      <ion-card *ngIf="deviceList == null" class="card_container">
+          
+           
+          
+            <ion-card-content class="card_content">
+                You not issued any device !! 
+            </ion-card-content>
+          
+          </ion-card>
+   
+</ion-content>

@@ -1,0 +1,94 @@
+<!--
+  Generated template for the IssueDevicePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>issueDevice</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+    
+      <ion-list no-lines>
+        
+       
+
+              <form  *ngIf="usersInformation" novalidate (ngSubmit)="onSubmit(issue_device)" [formGroup]="issue_device">
+                  
+                  <ion-item>
+                      <ion-label floating>First Name</ion-label>
+                      <ion-input value="{{ usersInformation.fname }}" disabled="true"  type="text"></ion-input>
+                  </ion-item>
+             
+                  
+                  <ion-item>
+                      <ion-label floating>Last Name</ion-label>
+                      <ion-input disabled="true" value="{{ usersInformation.lname }}"  type="text"></ion-input>
+                  </ion-item>
+               
+      
+                 
+                  <ion-item>
+                      <ion-label floating>Email</ion-label>
+                      <ion-input value="{{ usersInformation.email }}" disabled="true"  type="text"></ion-input>
+                  </ion-item>
+                
+                
+                  <ion-item class="ion-itemColor paddingTop" >
+                          <ion-label class="lableFloat" floating >City</ion-label>
+                      <ion-input value="{{ usersInformation.city }}" disabled="true"  type="text"></ion-input>
+                      
+                      </ion-item>
+                   
+      
+                  <ion-item class="ion-itemColor paddingTop"  >
+                          <ion-label class="lableFloat" floating >Branch</ion-label>
+                      <ion-input value="{{ usersInformation.branch.title }}" disabled="true"  type="text"></ion-input>
+                      
+                      </ion-item>
+                   
+                  <ion-item>
+                      <ion-label floating>Mob</ion-label>
+                      <ion-input  value="{{ usersInformation.mob }}" disabled="true" type="number"></ion-input>
+                  </ion-item>
+      
+                  <ion-item class="ion-itemColor">
+                    <ion-label class="lableFloat" floating>Team Lead's Email</ion-label>
+                    <ion-input class="lableFloat" formControlName="TLemail" type="text"></ion-input>
+                </ion-item>
+                <ion-item class="ion-itemColor"
+                    no-lines
+                    required
+                    *ngIf="validEmail ||((issue_device.get('TLemail').hasError('pattern') || issue_device.get('TLemail').hasError('required') ) && issue_device.get('TLemail').touched)">
+      
+                    <!-- <div
+                        class="error"
+                        *ngIf="validEmail || ( issue_device.get('TLemail').hasError('required') && issue_device.get('TLemail').touched)">
+                        Team lead's email is required
+                    </div>-->
+                    <div 
+                        class="error"
+                        *ngIf="(issue_device.get('TLemail').hasError('pattern')  && issue_device.get('TLemail').touched) ||  validEmail ">
+                       Please enter Team lead's office email Id.
+                    </div>
+                </ion-item>
+      
+                  <button class= "buttonColor" ion-button full margin-top >Issue Device</button>
+        
+              </form>
+        
+           
+          </ion-list>
+    </ion-content>
+    <style type="text/css">
+      .error {
+          color: red;
+      }
+    </style>

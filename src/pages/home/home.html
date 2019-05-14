@@ -1,0 +1,16 @@
+
+<ion-content padding>
+  <ion-tabs >
+     	<ion-tab tabIcon="logo-android" [rootParams]="android" class="tab-item-active"  tabTitle="ANDROID" [root]="tab" ></ion-tab>
+       <ion-tab tabIcon="logo-apple" [rootParams]="ios" tabTitle="IOS" [root]="tab" ></ion-tab>
+      <ion-tab tabIcon="logo-windows" [rootParams]="windows" tabTitle="WINDOWS" [root]="tab"></ion-tab>
+      <!-- <ion-tab tabIcon="logo-android" (ionSelect)="chat(android)"  class="tab-item-active"  tabTitle="ANDROID"  ></ion-tab>
+      <ion-tab tabIcon="logo-apple" (ionSelect)="chat(ios)" tabTitle="IOS"  ></ion-tab>
+     <ion-tab tabIcon="logo-windows" (ionSelect)="chat(windows)" tabTitle="WINDOWS" ></ion-tab> -->
+     </ion-tabs>
+     <!-- <ion-tabs ng-click="selectedTab(e)">
+      <ion-tab tabIcon="logo-android"   class="tab-item-active"  tabTitle="ANDROID"  ></ion-tab>
+      <ion-tab tabIcon="logo-apple"  tabTitle="IOS"  ></ion-tab>
+     <ion-tab tabIcon="logo-windows"  tabTitle="WINDOWS" ></ion-tab>
+    </ion-tabs> -->
+</ion-content>

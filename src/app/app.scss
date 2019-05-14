@@ -1,0 +1,160 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.bckColor{
+    // background-color : #1385b9 !important
+    // background-color : #ffb300 !important
+    
+    
+}
+
+ion-content {
+    font-family: 'Gotham_Pro_Bold';
+    color: color($colors, primary);
+	
+}
+
+.buttonColor{
+    color:  #ffffff;
+    background-color : color($colors, primary);
+}
+
+.lableFloat{
+	color: #90CAF9 ;
+	font-size: 20px;
+	// margin-top: 4.8rem;
+	// text-align: center;
+	// letter-spacing: 0.1px;
+}
+// .item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+//     color: #FFF;
+// }
+.toolbar-title.toolbar-title-md {
+	margin: 0;
+	text-align: center;
+	font-size: 25px;
+}
+
+.ion-itemColor{
+    // background-color : #EA80FC !important
+}
+// IOS Styles
+.alert-ios [aria-checked=true] .alert-radio-label{
+    color:  #1385b9;
+    border-color : #1385b9;
+}
+
+.alert-ios .alert-button {
+    color:  #1385b9;
+}
+
+
+
+
+//  Android 
+.alert-md .alert-button{
+    color:  #1385b9;
+}
+.alert-md [aria-checked=true] .alert-radio-label{
+    color:  #1385b9;
+    border-color : #1385b9;
+}
+.alert-md [aria-checked=true] .alert-radio-icon{
+    border-color : #1385b9;
+}
+
+.alert-md .alert-radio-inner{
+    background-color : #1385b9
+}
+
+
+
+.toolbar-background {
+	background: #1385b9;
+	border: 0 !important;
+}
+
+
+
+
+
+
+.menu-inner {
+	color: color($colors, secondary);
+
+	.scroll-content {
+		display: block;
+		background: #3c3c3c;
+		padding: 0 !important;
+	}
+
+	.intro {
+		margin-top: 30px;
+		color: color($colors, secondary);
+		text-align: center;
+
+		.profile-image {
+			text-align: center;
+
+			img {
+				width: 115px;
+				border-radius: 50%;
+				border: 4px solid #fff;
+			}
+		}
+
+		h2 {
+			font-family: 'Gotham_Pro_Bold';
+			font-size: 23px;
+			text-transform: capitalize;
+		}
+
+		h3 {
+			font-size: 20px;
+			font-family: 'Gotham_Pro_Regular';
+		}
+	}
+
+	.side-menu-items {
+		padding: 0;
+
+		li {
+			border-top: 2px solid #333;
+			padding: 13px 20px;
+			list-style: none;
+			color: #fff;
+			font-size: 20px;
+			font-family: 'Gotham_Medium';
+			display: flex;
+			align-items: center;
+
+			
+			.cart-count {
+				position: absolute;
+				right: 20px;
+				background: #e91c1a;
+				padding: 9px 12px 6px 10px;
+				border-radius: 50%;
+			}
+
+
+		}
+	}
+
+
+
+}

@@ -1,0 +1,79 @@
+
+
+
+<ion-menu [content]="content" id="menu1">
+  
+
+  <ion-content style="background-color: #111111">
+
+
+    <ion-row style="justify-content: center">
+      <img class="userImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB2RJ6teOHD4AoqxM7V_UbIUrZEMzhjqZQHef1REHYWuzhmmSK">
+    </ion-row>
+    <h2 style="text-align: center;color: #fff;margin-left: 10px;margin-right: 10px;" text-nowrap>{{ this.fname  }}</h2>
+    <h5 style="margin-left: 10px;margin-right: 10px;text-align: center;font-weight: 400;font-size: 16px;color: #fff;margin-top: 5px">{{ this.email }}</h5>
+    <hr style="margin-top: 20px"/>
+    <ion-list>
+      <!--<ion-item *ngFor="let item of items">-->
+      <button menuClose ion-button icon-left full clear style="border-bottom: 1pz solid #4f4f4f" *ngFor="let item of sideMenuList" (click)="sliderClick($event,item)" >
+        <ion-icon name="{{item.icon}}" class="sliderIcon"  ></ion-icon>
+        <ion-label class="sliderLbl" text-capitalize  >{{item.name}}</ion-label>  
+        <hr/>
+      </button>
+      
+      <!--</ion-item>-->
+      <!-- <button menuClose ion-button icon-left full clear (click)="goToHome($event)">
+        <ion-icon name="home" class="sliderIcon" ></ion-icon>
+        <ion-label class="sliderLbl" >Home</ion-label>
+      </button>
+
+      <hr/>
+      <button menuClose ion-button icon-left full clear (click)="goToMyList($event)">
+        <ion-icon name="bookmarks" class="sliderIcon" ></ion-icon>
+        <ion-label class="sliderLbl" >My List</ion-label>
+      </button>
+
+      <hr/>
+       <button menuClose ion-button icon-left full clear (click)="logout($event)">
+        <ion-icon name="log-out" class="sliderIcon" ></ion-icon>
+        <ion-label class="sliderLbl" >Logout</ion-label>
+      </button> -->
+      <!-- <button menuClose ion-button icon-left full clear>
+        <ion-icon name="cart" class="sliderIcon" ></ion-icon>
+        <ion-label class="sliderLbl">Chairs</ion-label>
+      </button>
+
+      <hr/>
+      <button menuClose ion-button icon-left full clear>
+        <ion-icon name="cart" class="sliderIcon" ></ion-icon>
+        <ion-label class="sliderLbl">Cupboards</ion-label>
+      </button>
+
+      <hr/>
+      <button menuClose ion-button icon-left full clear>
+        <ion-icon name="person" class="sliderIcon" ></ion-icon>
+        <ion-label class="sliderLbl">My Account</ion-label>
+      </button>
+
+      <hr/>
+      <button menuClose ion-button icon-left full clear>
+        <ion-icon name="locate" class="sliderIcon" ></ion-icon>
+        <ion-label class="sliderLbl">Store Locator</ion-label>
+      </button>
+
+      <hr/>
+      <button menuClose ion-button icon-left full clear>
+        <ion-icon name="list-box" class="sliderIcon" ></ion-icon>
+        <ion-label class="sliderLbl">My Orders</ion-label>
+      </button>
+
+      <hr/> -->
+     
+
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
